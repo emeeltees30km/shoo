@@ -6,14 +6,31 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="demo1"></p>
-    <p id="demo2"></p>
-    <h1>SAINUU HONGOR</h1>
+    <img src="zuraguud/shoo1.png" id="zurag"  width="200px" height="200px"> <br>
+    <p>toglogc 1iin onoo: <span id="niilber1"></span></p>
+    <p>toglogc 2iin onoo: <span id="niilber2"></span></p>
+    
+    <button onclick="hayh1()">1р тоглогч шоо хаях</button> <br>
+    <button onclick="hayh2()">2р тоглогч шоо хаях</button> <br>
+
     <script>
-        const fruits = ["banana", "orange", "blue", "apple", "mango"]
-        document.getElementById("demo1").innerHTML = fruits;
-        fruits.sort()
-        document.getElementById("demo2").innerHTML = fruits;
+        let count1 = 0
+        let count2 = 0
+        let shoo = document.getElementById("zurag");
+        function hayh1(){
+            let too = Math.floor(Math.random() * 6) + 1
+            shoo.src = "zuraguud/shoo" + too +".png"
+            count1 += too
+            document.getElementById("niilber1").innerHTML = count1;
+        }
+        function hayh2(){
+            let too = Math.floor(Math.random() * 6) + 1
+            shoo.src = "zuraguud/shoo" + too +".png"
+            count2 += too
+            document.getElementById("niilber2").innerHTML = count2;
+        }
+
+
     </script>
 </body>
 </html>
