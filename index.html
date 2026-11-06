@@ -4,33 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .players {
+            display: flex;
+            gap: 10px;
+
+        }
+        .shoo {
+            border: 1px solid black;
+            width: 250px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: maroon;
+        }
+        button{
+            background-color: green;
+            color: cyan;
+        }
+    </style>
 </head>
 <body>
-    <img src="zuraguud/shoo1.png" id="zurag"  width="200px" height="200px"> <br>
-    <p>toglogc 1iin onoo: <span id="niilber1"></span></p>
-    <p>toglogc 2iin onoo: <span id="niilber2"></span></p>
-    
+    <div class="players">
+        <div class="shoo">
+            <img src="zuraguud/shoo1.png" id="zurag1" width="200" height="200">
+        </div>
+        <div class="shoo">
+            <img src="zuraguud/shoo1.png" id="zurag2" width="200" height="200">
+        </div>
+    </div>
+
+    <p>toglogc 1iin onoo: <span id="niilber1">0</span></p>
+    <p>toglogc 2iin onoo: <span id="niilber2">0</span></p>
+
     <button onclick="hayh1()">1р тоглогч шоо хаях</button> <br>
     <button onclick="hayh2()">2р тоглогч шоо хаях</button> <br>
 
     <script>
-        let count1 = 0
-        let count2 = 0
-        let shoo = document.getElementById("zurag");
-        function hayh1(){
-            let too = Math.floor(Math.random() * 6) + 1
-            shoo.src = "zuraguud/shoo" + too +".png"
-            count1 += too
-            document.getElementById("niilber1").innerHTML = count1;
-        }
-        function hayh2(){
-            let too = Math.floor(Math.random() * 6) + 1
-            shoo.src = "zuraguud/shoo" + too +".png"
-            count2 += too
-            document.getElementById("niilber2").innerHTML = count2;
+        let c1 = 1;
+        let c2 = 1;
+        let count1 = 0;
+        let count2 = 0;
+
+        function hayh1() {
+            if (c1 < 4) {
+                let too = Math.floor(Math.random() * 6) + 1;
+                document.getElementById("zurag1").src = "zuraguud/shoo" + too + ".png";
+                count1 += too;
+                document.getElementById("niilber1").innerHTML = count1;
+                c1 += 1;
+
+            }
         }
 
-
+        function hayh2() {
+            if (c2 < 4) {
+                let too = Math.floor(Math.random() * 6) + 1;
+                document.getElementById("zurag2").src = "zuraguud/shoo" + too + ".png";
+                count2 += too;
+                document.getElementById("niilber2").innerHTML = count2;
+                c2 += 1;
+            }
+        }
     </script>
 </body>
 </html>
